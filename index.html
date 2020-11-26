@@ -1,0 +1,25 @@
+<h1 id="part-a">Part A</h1>
+<h2 id="digitizing-shelf-pictures-and-generating-points">Digitizing Shelf Pictures and generating points</h2>
+<p>I took 2 pictures of my shelf at different angles:</p>
+<p><img src="output_2_0.png" alt="png"></p>
+<p><img src="output_2_1.png" alt="png"></p>
+<p>After recovering the homography, I warped 1 shelf image using the homography to align with the second image </p>
+<p><img src="output_11_0.png" alt="png"></p>
+<p>I then added this warped image to the second image to obtain the mosaic.</p>
+<p><img src="output_11_1.png" alt="png"></p>
+<h2 id="mosaic-with-some-more-images">Mosaic with some more images</h2>
+<p>I performed a similar procedure with my TV setup as well</p>
+<p><img src="output_13_0.png" alt="png"></p>
+<p><img src="output_13_1.png" alt="png"></p>
+<p>The warped image using the computed homography</p>
+<p><img src="output_15_0.png" alt="png"></p>
+<p>The final mosaic</p>
+<p><img src="output_15_1.png" alt="png"></p>
+<h2 id="what-i-learned">What I learned</h2>
+<p>I noticed that my shelf mosaic has a dividing line between the 2 images that I was unable to get rid of while my TV image does not have a dividing line, which I thought was pretty interesting. It may be because my TV images have fewer distinct objects and slightly different lighting, due to which the dividing line was sufficiently blurred out.</p>
+<h1 id="part-b">Part B</h1>
+<h2 id="1-detecting-corner-features-in-an-image">1. Detecting corner features in an image</h2>
+<p>Using the given starter code, I obtained the Harris corner points for  my TV image. I slightly modified the <code>get_harris_corners</code> function to use <code>corner_peaks</code> with a <code>min_distance=20</code> to get less points and have a clearer portrayal of the edges in the image. </p>
+<p><img src="output_16_2.png" alt="png"></p>
+<h2 id="what-i-learned">What I learned</h2>
+<p>I was surprised to see so many Harris corner points and realized that choosing the most important points is very essential to properly automating the mosaic creation process.</p>
